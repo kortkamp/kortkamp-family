@@ -1,3 +1,54 @@
 {
-  "extends": "next/core-web-vitals"
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 13,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }],
+        // 1: Turn off rules that are no longer necessary in React 17 and in Next.js
+        "react/jsx-uses-react": "off",
+        "react/react-in-jsx-scope": "off",
+        // 2: We do not need to use prop types with TypeScript
+        "react/prop-types": "off",
+        "react/require-default-props": "off",
+        "react/jsx-props-no-spreading": "off",
+        "import/prefer-default-export": "off",
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+              "js": "never",
+              "jsx": "never",
+              "ts": "never",
+              "tsx": "never"
+            }
+        ],
+        "react/function-component-definition": [ 2, {
+            "namedComponents":  "arrow-function",
+            "unnamedComponents": "arrow-function"
+        }]
+    },
+    "settings": {
+        "import/resolver": {
+          "node": {
+            "extensions": [".js", ".jsx", ".ts", ".tsx"]
+          }
+        }
+    }
 }
