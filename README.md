@@ -1,4 +1,4 @@
-# Template for NextJs projects
+# Template for Kortkamp Family Website made in NextJS
 
 Includes:
 Typescript
