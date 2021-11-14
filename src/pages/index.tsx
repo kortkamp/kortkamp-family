@@ -1,17 +1,22 @@
-import type { NextPage } from 'next';
 import Head from 'next/head';
 
 import { Layout } from '../components/Layout';
 import { Article } from '../components/Article';
-import { AsideItem } from '../components/AsideItem';
 
 import {
-  Aside, Title, Container, ContentWraper,
+  Title, Container, ContentWraper,
 } from '../styles/pages/Home';
+import { AsideList } from '../components/AsideList';
+import { getAllPosts, IPostData } from '../api';
 
-// import * as posts from '../data';
+interface Props {
+  posts: {
+    data:IPostData;
+    content : string;
+  }[]
+}
 
-const Home: NextPage = () => (
+const Home = ({ posts }:Props) => (
   <Container>
     <Head>
       <title>Template Next App</title>
@@ -25,15 +30,18 @@ const Home: NextPage = () => (
           <Title>LOREM</Title>
           <Article />
         </article>
-        <Aside>
-          <Title>LOREM</Title>
-          <AsideItem />
-          <AsideItem />
-          <AsideItem />
-        </Aside>
+        <AsideList posts={posts} />
       </ContentWraper>
     </Layout>
   </Container>
 );
+
+export async function getStaticProps() {
+  const posts = getAllPosts();
+
+  return {
+    props: { posts },
+  };
+}
 
 export default Home;

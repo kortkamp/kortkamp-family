@@ -5,10 +5,6 @@ export const Container = styled.div`
 
 `;
 
-export const Aside = styled.aside`  
-  
-`;
-
 export const Title = styled.div`
   margin-bottom: 30px;
   
