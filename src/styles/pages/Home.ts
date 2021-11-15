@@ -22,7 +22,7 @@ export const Title = styled.div`
 
 export const ContentWraper = styled.div`
   display: flex;
-  gap: 20px;
+  gap: 100px;
 
   & > article {
     flex:2;
