@@ -6,7 +6,7 @@ import {
   Container, Title, SiteName, Description, Background, Banner,
 } from './styles';
 
-import BackgroundImg from '../../public/hanover.png';
+import BackgroundImg from '../../../public/hanover.png';
 
 export const Header = () => (
   <Container>

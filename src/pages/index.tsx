@@ -1,12 +1,10 @@
 import Head from 'next/head';
 
-import { Layout } from '../components/Layout';
-import { Article } from '../components/Article';
+import { ArticleLayout } from '../components/ArticleLayout';
 
 import {
-  Title, Container, ContentWraper,
+  Container,
 } from '../styles/pages/Home';
-import { AsideList } from '../components/AsideList';
 import { getAllPosts, IPostData } from '../api';
 
 interface Props {
@@ -24,15 +22,11 @@ const Home = ({ posts }:Props) => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
-    <Layout>
-      <ContentWraper>
-        <article>
-          <Title>LOREM</Title>
-          <Article />
-        </article>
-        <AsideList posts={posts} />
-      </ContentWraper>
-    </Layout>
+    <ArticleLayout posts={posts}>
+
+      <p>hi</p>
+
+    </ArticleLayout>
   </Container>
 );
 
