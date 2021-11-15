@@ -13,7 +13,7 @@ export const Container = styled.nav`
     ${(props) => props.theme.colors.primary}
   );
 
-  box-shadow: 0px 4px 9px ${(props) => props.theme.colors.primary_light};
+  box-shadow: 0px 3px 4px ${(props) => props.theme.colors.primary_light};
 `;
 
 export const List = styled.ul`
