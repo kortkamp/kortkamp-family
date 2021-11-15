@@ -4,6 +4,13 @@ export const Container = styled.div`
 
   display: flex;
   gap: 10px;
+
+  opacity: 0.8;
+  
+  &:hover {
+    opacity: 1;
+  }
+  transition: all 0.3s;
 `;
 
 export const Tag = styled.div`

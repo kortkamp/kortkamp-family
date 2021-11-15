@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.aside`
-
+  a {
+    text-decoration: none;
+  }
 `;
 
 export const Title = styled.div`
