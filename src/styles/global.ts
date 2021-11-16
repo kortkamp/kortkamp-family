@@ -23,10 +23,10 @@ export default createGlobalStyle`
     color: ${(props) => props.theme.colors.primary_light};
     
     font: ${({ theme }) => theme.font};
-
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
 
     max-width: 100vw;
-    
     min-height: 100vh;
   }
 `;

@@ -17,5 +17,20 @@ export const CoverImg = styled.img`
 `;
 
 export const Content = styled.div`
+  h1 {
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  p {
+    text-indent: 50px;
+    
+    /* letter-spacing: 2px; */
+  }
+
+  a {
+    text-decoration: none;
+    color: #008CBA;
+  }
 
 `;
