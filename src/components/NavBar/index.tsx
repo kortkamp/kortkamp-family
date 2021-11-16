@@ -29,7 +29,7 @@ export const NavBar = () => (
       </li>
 
       <li>
-        <a href="/">
+        <a href="/contact">
           <span className="after">CONTATO</span>
           <span className="before">CONTATO</span>
         </a>
