@@ -2,8 +2,9 @@ import styled from 'styled-components';
 
 export const Container = styled.form`
   display: flex;
+  justify-content: center;
   
-  height: 500px;
+  height: 600px;
   width: 100%;
   max-width: ${({ theme }) => theme.maxWidth};
   padding: 0 0px;
@@ -11,6 +12,9 @@ export const Container = styled.form`
 
   border-radius: 5px;
   overflow: hidden;
+
+  box-shadow: 0 0 6px grey;
+
 `;
 
 export const Aside = styled.aside`
@@ -38,31 +42,31 @@ export const InputWraper = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-items: stretch;
+  
 
   padding: 20px;
 
   background-color: ${({ theme }) => theme.colors.shape};
 
-  & > * {
-    height: 40px;
-    padding: 10px;
 
-    border: 1px solid ${({ theme }) => theme.colors.text};
+  h5{
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  input, textarea, button {
     border-radius: 5px;
-    margin-bottom: 5px;
-  }
-  span {
-    border: none;
-    align-self: center;
-    font-size: 1.3rem;
+    padding: 10px;
+    margin-top: 5px;
+
+    font-size: 1rem;
+
+    border: 1px solid ${({ theme }) => theme.colors.text}
   }
 
-  textarea {
-    height: auto;
-  }
-
-  input[type='submit']{
+  button[type='submit']{
     width: 30%;
     
     align-self: flex-end;
@@ -85,6 +89,26 @@ export const InputWraper = styled.div`
 
     &:active{
       opacity: 0.8;
+    }
+  }
+
+  div.form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    
+    .invalid-feedback {
+      color:red;
+      height: 20px;
+    }
+    .is-invalid {
+      border: 1px solid red;
+      &:focus{
+        border: 1px solid red;
+        outline: none;
+        box-shadow: 0 0 3px red;
+      }
     }
   }
 

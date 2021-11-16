@@ -7,7 +7,7 @@ import { Container } from '../styles/pages/Contact';
 const Contact = () => (
   <Container>
     <Header />
-    <main style={{ display: 'flex' }}>
+    <main style={{ display: 'flex', justifyContent: 'center' }}>
       <ContactForm />
     </main>
     <Footer />
