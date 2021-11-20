@@ -10,6 +10,7 @@ const theme = {
     text: '#969cb2',
     text_dark: '#000',
     background: '#f0f2f5',
+    background_dark: '#e9e9e9',
     header: '#111111',
     footer: '#e5e5e5',
   },

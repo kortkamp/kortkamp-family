@@ -7,23 +7,51 @@ export const Container = styled.form`
   height: 600px;
   width: 100%;
   max-width: ${({ theme }) => theme.maxWidth};
-  padding: 0 0px;
-  margin: 20px;
+  padding: 20px; 
 
   border-radius: 5px;
   overflow: hidden;
 
-  box-shadow: 0 0 6px grey;
+  /* box-shadow: 0 0 6px grey; */
+
+  h5{
+    /* text-align: center; */
+    font-size: 1.5rem;
+    padding-bottom: 20px;
+  }
 
 `;
 
+export const SubmitResponse = styled.div`
+  display: flex ;
+  justify-content: center;
+  align-items: center;
+`;
 export const Aside = styled.aside`
   flex: 1;
+
+  padding: 20px;
+
+  /* border: 1px solid; */
+
+  @media (max-width: 720px){
+    display: none;
+  }
+`;
+
+export const AsideContent = styled.div`
+  
+  width: 500px;
+  height: 500px;
+
+  /* border-top: 30px */
+  
   overflow: hidden;
   background-image: url('/hanover.jpg');
   background-position: center;
   background-size: cover;
   opacity: 0.8;
+  
   img {
     width: 500px;
     height: 500px;
@@ -31,9 +59,7 @@ export const Aside = styled.aside`
     object-fit: cover;
     
   }
-  @media (max-width: 720px){
-    display: none;
-  }
+  
 `;
 
 export const InputWraper = styled.div`
@@ -46,24 +72,27 @@ export const InputWraper = styled.div`
   align-items: stretch;
   
 
-  padding: 20px;
+  /* padding: 20px; */
 
   background-color: ${({ theme }) => theme.colors.shape};
+  background-color: transparent;
 
+  /* border: 1px solid; */
 
-  h5{
-    text-align: center;
-    font-size: 1.5rem;
-  }
+  
 
   input, textarea, button {
     border-radius: 5px;
     padding: 10px;
-    margin-top: 5px;
+    /* margin-top: 0px; */
 
     font-size: 1rem;
 
-    border: 1px solid ${({ theme }) => theme.colors.text}
+    border: 2px solid #dadada;
+    /* border: none; */
+    /* box-shadow: 1px 1px 5px ${({ theme }) => theme.colors.text}; */
+    background-color:  ${({ theme }) => theme.colors.background_dark};
+
   }
 
   button[type='submit']{
@@ -100,7 +129,10 @@ export const InputWraper = styled.div`
     
     .invalid-feedback {
       color:red;
-      height: 20px;
+      height: 15px;
+      font-size:0.8rem;
+      padding-left: 10px;
+      padding-top: 2px;
     }
     .is-invalid {
       border: 1px solid red;
