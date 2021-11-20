@@ -6,7 +6,7 @@ import * as Yup from 'yup';
 
 import { useState } from 'react';
 
-import AsideImg from '../../../public/hanover.jpg';
+import AsideImg from '../../../public/KrkHannover.png';
 
 import {
   Aside, Container, InputWraper, SubmitResponse,
@@ -19,7 +19,7 @@ interface IContactData {
 }
 export const ContactForm = () => {
   const [submitted, setSubmitted] = useState(false);
-  const [submittedMessage, setSubmittedMessage] = useState('teste');
+  const [submittedMessage, setSubmittedMessage] = useState('');
   const validationSchema = Yup.object().shape({
     name: Yup.string()
       .required('Favor informar seu nome'),
@@ -53,8 +53,7 @@ export const ContactForm = () => {
         setSubmittedMessage('Obrigado pelo contato!');
         reset();
       }
-    }).catch((err) => {
-      console.log(err);
+    }).catch(() => {
       setSubmittedMessage('Houve um erro no envio da sua mensagem, por favor tente mais tarde!');
     });
 
@@ -62,65 +61,65 @@ export const ContactForm = () => {
   };
   return (
     <Container onSubmit={handleSubmit(onSubmit)}>
+
+      <Aside>
+        <h5>Mapa de Hanover</h5>
+        <Image src={AsideImg} />
+      </Aside>
       {submitted
         ? (
           <SubmitResponse>
             {submittedMessage}
+            <a href="/">Voltar</a>
           </SubmitResponse>
         )
         : (
-          <>
-            <Aside>
-              <h5>Hanover</h5>
-              <Image src={AsideImg} />
-            </Aside>
-            <InputWraper>
-              <h5>Contato</h5>
-              <div className="form-group">
-                {/* <label>Nome</label> */}
-                <input
-                  type="text"
-                  {...register('name')}
-                  className={`${errors.name ? 'is-invalid' : ''}`}
-                  placeholder="Nome"
-                />
-                <div className="invalid-feedback">
-                  {errors.name?.message}
-                </div>
+          <InputWraper>
+            <h5>Contato</h5>
+            <div className="form-group">
+              {/* <label>Nome</label> */}
+              <input
+                type="text"
+                {...register('name')}
+                className={`${errors.name ? 'is-invalid' : ''}`}
+                placeholder="Nome"
+              />
+              <div className="invalid-feedback">
+                {errors.name?.message}
               </div>
-              <div className="form-group">
-                {/* <label>Email</label> */}
-                <input
-                  type="text"
-                  {...register('email')}
-                  className={`${errors.email ? 'is-invalid' : ''}`}
-                  placeholder="E-mail"
-                />
-                <div className="invalid-feedback">
-                  {errors.email?.message}
-                </div>
+            </div>
+            <div className="form-group">
+              {/* <label>Email</label> */}
+              <input
+                type="text"
+                {...register('email')}
+                className={`${errors.email ? 'is-invalid' : ''}`}
+                placeholder="E-mail"
+              />
+              <div className="invalid-feedback">
+                {errors.email?.message}
               </div>
+            </div>
 
-              <div className="form-group">
-                {/* <label>Mensagem</label> */}
-                <textarea
-                  id=""
-                  rows={15}
-                  {...register('message')}
-                  className={`${errors.message ? 'is-invalid' : ''}`}
-                  placeholder="Mensagem"
-                />
-                <div className="invalid-feedback">
-                  {errors.message?.message}
-                </div>
+            <div className="form-group">
+              {/* <label>Mensagem</label> */}
+              <textarea
+                id=""
+                rows={15}
+                {...register('message')}
+                className={`${errors.message ? 'is-invalid' : ''}`}
+                placeholder="Mensagem"
+              />
+              <div className="invalid-feedback">
+                {errors.message?.message}
               </div>
+            </div>
 
-              <div className="form-group">
-                <button type="submit">Enviar</button>
-              </div>
+            <div className="form-group">
+              <button type="submit">Enviar</button>
+            </div>
 
-            </InputWraper>
-          </>
+          </InputWraper>
         )}
     </Container>
   );
