@@ -23,74 +23,80 @@ export const Container = styled.form`
 `;
 
 export const SubmitResponse = styled.div`
+  flex: 1;
   display: flex ;
+  flex-direction:column;
   justify-content: center;
   align-items: center;
-`;
-export const Aside = styled.aside`
-  flex: 1;
 
   padding: 20px;
 
-  /* border: 1px solid; */
+  a {
+    width: 80px;
+    padding: 5px;
+    margin-top:20px;
+
+    
+
+    background-image: linear-gradient(
+      ${(props) => props.theme.colors.primary_light},
+      ${(props) => props.theme.colors.primary}
+    );
+
+    color: ${({ theme }) => theme.colors.secondary};
+
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.1s;
+    opacity: 0.9;
+
+    &:hover{
+      opacity: 1;
+    }
+
+    &:active{
+      opacity: 0.8;
+    }
+  }
+`;
+
+export const Aside = styled.aside`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  
+  padding: 20px;
+  
 
   @media (max-width: 720px){
     display: none;
   }
 `;
 
-export const AsideContent = styled.div`
-  
-  width: 500px;
-  height: 500px;
-
-  /* border-top: 30px */
-  
-  overflow: hidden;
-  background-image: url('/hanover.jpg');
-  background-position: center;
-  background-size: cover;
-  opacity: 0.8;
-  
-  img {
-    width: 500px;
-    height: 500px;
-    /* min-height: 100%; */
-    object-fit: cover;
-    
-  }
-  
-`;
-
 export const InputWraper = styled.div`
-
 
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: stretch;
-  
-
-  /* padding: 20px; */
+  padding: 20px;
 
   background-color: ${({ theme }) => theme.colors.shape};
   background-color: transparent;
 
-  /* border: 1px solid; */
-
-  
-
   input, textarea, button {
     border-radius: 5px;
     padding: 10px;
-    /* margin-top: 0px; */
 
     font-size: 1rem;
 
     border: 2px solid #dadada;
-    /* border: none; */
-    /* box-shadow: 1px 1px 5px ${({ theme }) => theme.colors.text}; */
     background-color:  ${({ theme }) => theme.colors.background_dark};
 
   }
