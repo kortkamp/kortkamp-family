@@ -8,7 +8,7 @@ if (process.env.SENDGRIDKEY) {
   sgMail.setApiKey(process.env.SENDGRIDKEY);
 }
 
-export default function (req:NextApiRequest, res:NextApiResponse) {
+export default function sendMail(req:NextApiRequest, res:NextApiResponse) {
   const mailOptions = {
     to: 'marcelusmedius@gmail.com',
     from: `contact@${process.env.DOMAIN}`,
