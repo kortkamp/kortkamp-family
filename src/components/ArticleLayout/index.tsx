@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 import {
-  Container, Main, Title, ContentWraper,
+  Container, Main, ContentWraper,
 } from './styles';
 import { Footer } from '../Footer';
 import { Header } from '../Header';
